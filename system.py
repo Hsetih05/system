@@ -46,7 +46,7 @@ if result == 'Tool Detection':
     from tensorflow import keras
 
     from sklearn.metrics import accuracy_score,f1_score,confusion_matrix
-    train=pd.read_csv('E:/hset/New folder/train.csv')
+    train=pd.read_csv('E:\hset\New folder\train.csv')
     train.shape
     train.columns
 
@@ -107,7 +107,7 @@ if result == 'Tool Detection':
     frames=list()
     for i in range(1,19):
         exp = '0' + str(i) if i < 10 else str(i)
-        frame = pd.read_csv("E:/hset/New folder/experiment_{}.csv".format(exp))
+        frame = pd.read_csv("E:\hset\New folder\experiment_{}.csv".format(exp))
         row = train[train['No'] == i]
         frame['target'] = 1 if row.iloc[0]['tool_condition'] == 'worn' else 0
         frames.append(frame)
