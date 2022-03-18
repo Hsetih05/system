@@ -102,7 +102,15 @@ if result == 'Tool Detection':
 
     # showing the figure
     st.pyplot(fig)
+    
+    import os
+    if len(multiple_file) == 0:
+        st.error("No file were uploaded")
 
+    for multiple_file in multiple_file:
+        bytes_data = multiple_file.read()
+        print("filename:", multiple_file.name)
+        print(bytes_data)
 
     frames=list()
     for i in range(1,19):
